@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {}
+    "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {
+    "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+        "projectUniqueName": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
         "projectName": "PathfindingHW1",
-        "projectPath": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
-        "packagesPath": "C:\\Users\\TEMP.IAM\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\obj\\",
+        "projectPath": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+        "packagesPath": "C:\\Users\\baiom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\TEMP.IAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\baiom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

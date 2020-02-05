@@ -16,23 +16,37 @@ namespace PathfindingHW1
         public Node startPoint;
         public Node endPoint;
         private Node[,] map;
-
-        private double distanceScoreRight;
-        private double distanceScoreLeft;
-        private double distanceScoreUp;
-        private double distanceScoreDown;
-
-        private double[] distanceArray;
-
+        public int mapSize;
 
         private List<Node> solutionList;
 
+
+        void fillMap(string input, bool usingDefault)
+        {
+            if(usingDefault) //use the default 10x10 stuff w/e
+            {
+                mapSize = 10;
+                fillMap();
+                return;
+            }
+            mapSize = (int)Math.Sqrt(input.Length);
+
+            map = new Node[mapSize, mapSize];
+            for (int a = 0; a < mapSize; a++)
+            {
+                for (int b = 0; b < mapSize; b++)
+                {
+                    map[a, b] = new Node(a,b);
+                    map[a, b].isPassable = input.ElementAt(a * mapSize + b); //oh jesus christ
+                }
+            }
+        }
         void fillMap()
         {
-            map = new Node[10,10];
-            for (int a = 0; a < 10; a++)
+            map = new Node[mapSize, mapSize];
+            for (int a = 0; a < mapSize; a++)
             {
-                for (int b = 0; b < 10; b++)
+                for (int b = 0; b < mapSize; b++)
                 {
                     map[a, b] = new Node(a,b);
                 }
@@ -152,9 +166,9 @@ namespace PathfindingHW1
         void printMap()
         {
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < mapSize; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < mapSize; j++)
                 {
                     if(currentPoint.x == i && currentPoint.y == j)
                     {
@@ -176,22 +190,21 @@ namespace PathfindingHW1
             }
         }
 
-        public Agent(Node[,] map, Node startingPos, Node endPos)
+        public Agent(int mapSize, Node startingPos, Node endPos)
         {
+            this.mapSize = mapSize;
             path = new List<Node>();
-            this.map = map;
             currentPoint = new Node(startingPos.x,startingPos.y);
             currentPoint = startingPos;
             startPoint = startingPos;
             endPoint = endPos;
-            distanceArray = new double[4];
+
         }
 
         public List<Node> SolvePath()
         {
             while(currentPoint != endPoint)
             {
-                
                 CheckTerrain();
             }
             return solutionList;
@@ -217,71 +230,44 @@ namespace PathfindingHW1
                 path.Add(currentPoint);
             }
             
+            //Up
             if (map[currentPoint.x, currentPoint.y + 1].isPassable == 0 )
             {
-
-                //Passable
-                //distanceArray[2] = CheckDistanceRight();
-                //path.Add(currentPoint);
-              
                 nextPos = map[currentPoint.x, currentPoint.y + 1];
-                
                 if (!path.Contains(nextPos))
                 {
                     Move("Right");
                 }
-                
-
-
-
-
-
             }
+
             //Right
             else if (map[currentPoint.x + 1, currentPoint.y].isPassable == 0)
             {
-
-                //Passable                               
-                // distanceArray[0] = CheckDistanceDown();
-               // path.Add(currentPoint);
                 nextPos = map[currentPoint.x + 1, currentPoint.y];
                 if (!path.Contains(nextPos))
                 {
                     Move("Down");
-                }
-                    
-                   
-                            
+                }               
             }
+
+            //Down
             else if (map[currentPoint.x, currentPoint.y - 1].isPassable == 0) 
             {
-
-                //Passable
-                //distanceArray[3] = CheckDistanceLeft();
-                //path.Add(currentPoint);
-                       nextPos = map[currentPoint.x, currentPoint.y - 1];
+                nextPos = map[currentPoint.x, currentPoint.y - 1];
                 if (!path.Contains(nextPos))
                 {
                    Move("Left");
-                }
-              
-                                  
+                }                  
             }
 
+            //Left
             else if (map[currentPoint.x - 1, currentPoint.y].isPassable == 0)
             {
-
-                //Passable
-                //distanceArray[1] = CheckDistanceUp();
-                 //path.Add(currentPoint);
-               nextPos = map[currentPoint.x - 1, currentPoint.y];
+                nextPos = map[currentPoint.x - 1, currentPoint.y];
                 if (!path.Contains(nextPos))
-                { Move("Up");
-                    
-                }
-                    
-                    
-                                      
+                { 
+                    Move("Up"); 
+                }                      
             }
             
 
@@ -336,14 +322,35 @@ namespace PathfindingHW1
 
             public static void Main(string[] args)
             {
-            
-            
-            Node[,] aLocals = new Node[10, 10];
-            Node start = new Node(2,1);
-            Node end = new Node(8,6);
+            Agent agent;
+            Console.WriteLine("Input your list (Enter to use default 10x10 test area)");
+            string input = Console.ReadLine();
+            if(input.Length == 0)
+            {
+                Node start = new Node(2, 1);
+                Node end = new Node(8, 6);
 
-            Agent agent = new Agent(aLocals, start, end);
-            agent.fillMap();
+                agent = new Agent(10, start, end);
+                agent.fillMap(String.Empty,true);
+            } else
+            {
+                //make sure it's in the correct format
+
+                Console.WriteLine("Input the X coordinate of the start tile");
+                Int32.TryParse(Console.ReadLine(), out int startX);
+                Console.WriteLine("Input the Y coordinate of the start tile");
+                Int32.TryParse(Console.ReadLine(), out int startY);
+                Console.WriteLine("Input the X coordinate of the end tile");
+                Int32.TryParse(Console.ReadLine(), out int endX);
+                Console.WriteLine("Input the Y coordinate of the end tile");
+                Int32.TryParse(Console.ReadLine(), out int endY);
+
+
+                agent = new Agent((int)Math.Sqrt(input.Length), new Node(startX,startY), new Node(endX,endY));
+                agent.fillMap(input, true);
+            }
+
+           
 
 
             Console.WriteLine(agent.SolvePath());
