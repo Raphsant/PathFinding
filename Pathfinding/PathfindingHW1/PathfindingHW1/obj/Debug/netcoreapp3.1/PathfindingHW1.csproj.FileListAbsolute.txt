@@ -1,0 +1,11 @@
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.exe
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.deps.json
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.runtimeconfig.json
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.runtimeconfig.dev.json
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.dll
+C:\workspace\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.pdb
+C:\workspace\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.csprojAssemblyReference.cache
+C:\workspace\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.AssemblyInfoInputs.cache
+C:\workspace\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.AssemblyInfo.cs
+C:\workspace\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.dll
+C:\workspace\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.pdb

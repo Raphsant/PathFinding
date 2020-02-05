@@ -1,0 +1,5 @@
+C:\workspace\PathFinding\Pathfinding\Pathfinding\bin\Debug\Pathfinding.exe.config
+C:\workspace\PathFinding\Pathfinding\Pathfinding\bin\Debug\Pathfinding.exe
+C:\workspace\PathFinding\Pathfinding\Pathfinding\bin\Debug\Pathfinding.pdb
+C:\workspace\PathFinding\Pathfinding\Pathfinding\obj\Debug\Pathfinding.exe
+C:\workspace\PathFinding\Pathfinding\Pathfinding\obj\Debug\Pathfinding.pdb

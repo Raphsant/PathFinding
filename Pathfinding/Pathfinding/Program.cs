@@ -9,8 +9,8 @@ namespace Pathfinding
 {
     class Program
     {
-        static int[] map = new int[100] {
-            0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+        /*static int[] map = new int[100] {
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -19,11 +19,29 @@ namespace Pathfinding
             0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
             0, 0, 0, 0, 0, 0, 1, 1, 1, 0,
             0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 1, 0, 0, 0
-        }; //0 is impassable, 1 is passable
+            0, 0, 0, 0, 0, 0, 0 , 0, 0, 0
+        }; //0 is impassable, 1 is passable*/
 
+
+        static int[,] Map = new int[10, 10];
         
+        void fillarray()
+        {
+            for (int x = 0; x < 10; x++)
+            {
+                for (int y = 0; y < 10; y++)
+                {
+                    int[,] Pedro = new int[x, y];
+                    foreach (int z in Pedro)
+                    {
+                        Console.WriteLine(x);
+                    }
+                }
+         
+            }
 
+            
+        }
         public enum Direction
         {
             Up,
@@ -36,7 +54,7 @@ namespace Pathfinding
 
         public static Point endPoint = new Point(6, 9);
 
-        public static List<int> path = new List<int>();
+        public static List<Point> path = new List<Point>();
 
         static List<int> visited = new List<int>();
 
@@ -44,34 +62,56 @@ namespace Pathfinding
 
         static void Main(string[] args)
         {
-            bool pathComplete = false;
 
-            //start from the starting position
-            Point head = startPoint;
-
-            //find out what directions we can go
-
-            List<Direction> directionsWeCanGo = new List<Direction>();
-
-            for(int i = 0; i < 3; i++)
+            
+            for (int x = 0; x < 10; x++)
             {
-                //loop through all the directions to see if we can go there
-                if (getPassable(head, (Direction)i))
+                for (int y = 0; y < 10; y++)
                 {
-                    directionsWeCanGo.Add((Direction)i);
+                    //int[,] Pedro = new int[x, y];
+                    //foreach (int z in Pedro)
+                    //{
+                    //    Console.WriteLine($"{x}, {y}");
+
+                    //}
+                    Map[x, y] = Convert.ToInt32($"{x}{y}");
+                    Console.WriteLine($"({x}, {y}): { Map[x, y]}");
+                    
                 }
+                Console.ReadLine();
             }
 
-            //pick a direction and go to it IF you can
 
 
 
-            
+            //bool pathComplete = false;
 
-            
+            ////start from the starting position
+            //Point head = startPoint;
+
+            ////find out what directions we can go
+
+            //List<Direction> directionsWeCanGo = new List<Direction>();
+
+            //for(int i = 0; i < 3; i++)
+            //{
+            //    //loop through all the directions to see if we can go there
+            //    if (getPassable(head, (Direction)i))
+            //    {
+            //        directionsWeCanGo.Add((Direction)i);
+            //    }
+            //}
+
+            ////pick a direction and go to it IF you can
+
+
+
+
+
+
         }
 
-        static bool getPassable(int x, int y)
+      /*  static bool getPassable(int x, int y)
         {
             //check to see if out of bounds
             int maxSize = (int)Math.Sqrt(map.Length) - 1;
@@ -126,6 +166,6 @@ namespace Pathfinding
                 default:
                     return false;
             }
-        }
+        }*/
     }
 }
