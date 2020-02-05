@@ -191,6 +191,7 @@ namespace PathfindingHW1
         {
             while(currentPoint != endPoint)
             {
+                
                 CheckTerrain();
             }
             return solutionList;
@@ -207,165 +208,128 @@ namespace PathfindingHW1
             double endDistance = c;
             return endDistance;
         }
-
+      
         private void CheckTerrain()
         {
 
-
-            if (map[currentPoint.x, currentPoint.y + 1].isPassable == 0)
+            if(!path.Contains(currentPoint))
             {
+                path.Add(currentPoint);
+            }
+            
+            if (map[currentPoint.x, currentPoint.y + 1].isPassable == 0 )
+            {
+
+                //Passable
+                //distanceArray[2] = CheckDistanceRight();
+                //path.Add(currentPoint);
+              
+                nextPos = map[currentPoint.x, currentPoint.y + 1];
+                
                 if (!path.Contains(nextPos))
                 {
-                    //Passable
-                    //distanceArray[2] = CheckDistanceRight();
-                    nextPos = map[currentPoint.x, currentPoint.y + 1];
-                    path.Add(currentPoint);
                     Move("Right");
                 }
+                
+
+
+
+
+
             }
             //Right
             else if (map[currentPoint.x + 1, currentPoint.y].isPassable == 0)
             {
-                if(!path.Contains(nextPos))
-                {
-                    //Passable                               
-                    // distanceArray[0] = CheckDistanceDown();
-                    nextPos = map[currentPoint.x + 1, currentPoint.y];
-                    path.Add(currentPoint);
-                    Move("Down");
-                }               
-            }
-            else if (map[currentPoint.x, currentPoint.y - 1].isPassable == 0)
-            {
+
+                //Passable                               
+                // distanceArray[0] = CheckDistanceDown();
+               // path.Add(currentPoint);
+                nextPos = map[currentPoint.x + 1, currentPoint.y];
                 if (!path.Contains(nextPos))
                 {
-                    //Passable
-                    //distanceArray[3] = CheckDistanceLeft();
-                    nextPos = map[currentPoint.x, currentPoint.y - 1];
-                    path.Add(currentPoint);
-                    Move("Left");
-                }                   
+                    Move("Down");
+                }
+                    
+                   
+                            
+            }
+            else if (map[currentPoint.x, currentPoint.y - 1].isPassable == 0) 
+            {
+
+                //Passable
+                //distanceArray[3] = CheckDistanceLeft();
+                //path.Add(currentPoint);
+                       nextPos = map[currentPoint.x, currentPoint.y - 1];
+                if (!path.Contains(nextPos))
+                {
+                   Move("Left");
+                }
+              
+                                  
             }
 
             else if (map[currentPoint.x - 1, currentPoint.y].isPassable == 0)
             {
-                if(!path.Contains(nextPos))
-                {
-                    //Passable
-                    //distanceArray[1] = CheckDistanceUp();
-                    nextPos = map[currentPoint.x - 1, currentPoint.y];
-                    Move("Up");
-                    path.Add(currentPoint);
-                }                          
-            }
 
-
-            
-   
-           
-
-           
-
-           // CheckForLowestDistance();
-        }
-        /*
-        double CheckDistanceDown()
-        {
-            Node downPoint = new Node(currentPoint.x + 1, currentPoint.y);
-            //return Math.Pow(rightPoint,2) - Math.Pow(endPoint,2) 
-            return distanceScoreRight = CalculateDistanceFromExit(downPoint, endPoint);
-        }
-
-        double CheckDistanceUp()
-        {
-            Node upPoint = new Node(currentPoint.x - 1, currentPoint.y);
-            return distanceScoreLeft = CalculateDistanceFromExit(upPoint, endPoint);
-        }
-
-        double CheckDistanceLeft()
-        {
-            Node leftPoint = new Node(currentPoint.x, currentPoint.y-1);
-            return distanceScoreUp = CalculateDistanceFromExit(leftPoint, endPoint);
-        }
-
-        double CheckDistanceRight()
-        {
-            Node rightPoint = new Node(currentPoint.x, currentPoint.y+1);
-            return distanceScoreDown = CalculateDistanceFromExit(rightPoint, endPoint);
-        }
-
-        void CheckForLowestDistance()
-        {
-            double min = distanceArray.Min();
-            if(distanceArray[0] == min)
-            {
-                //Move to right
-                Move("Down");
-                Console.WriteLine("Down");
-            }
-            else if(distanceArray[1] == min)
-            {
-                //Move left
-                Move("Up");
-                Console.WriteLine("Up");
-            }
-            else if(distanceArray[2] == min)
-            {
-                //move up
-                Move("Left");
-                Console.WriteLine("Left");
-            }
-            else
-            {
-                //move down
-                Move("Right");
-                Console.WriteLine("Right");
+                //Passable
+                //distanceArray[1] = CheckDistanceUp();
+                 //path.Add(currentPoint);
+               nextPos = map[currentPoint.x - 1, currentPoint.y];
+                if (!path.Contains(nextPos))
+                { Move("Up");
+                    
+                }
+                    
+                    
+                                      
             }
             
+
+
+
+
+
+
+
         }
-
-     
-        */
-
+       
         Node Move(string direction)
         {
-            if(!path.Contains(nextPos))
-            {
+     
                 if (direction.Equals("Down"))
                 {
-                    //Move Down                  
+                //Move Down      
+                map[currentPoint.x, currentPoint.y].isPassable = 1;
                     currentPoint = nextPos;
                     Console.WriteLine("Moved Down");
+                    
                     return currentPoint;
                 }
                 else if (direction.Equals("Up"))
                 {
-                    //Move Up
-                    
-                    currentPoint = nextPos;
+                //Move Up
+                map[currentPoint.x, currentPoint.y].isPassable = 1;
+                currentPoint = nextPos;
                     Console.WriteLine("Moved Up");
                     return currentPoint;
                 }
                 else if (direction.Equals("Left"))
                 {
-                    // Move Left
-                    currentPoint = nextPos;
+                // Move Left
+                map[currentPoint.x, currentPoint.y].isPassable = 1;
+                currentPoint = nextPos;
                     Console.WriteLine("Moved Left");
                     return currentPoint;
                 }
                 else
                 {
-                    //Move Right
-                    currentPoint = nextPos;
+                //Move Right
+                map[currentPoint.x, currentPoint.y].isPassable = 1;
+                currentPoint = nextPos;
                     Console.WriteLine("Moved Right");
                     return currentPoint;
                 }
-            }        
-            else
-            {
-                Console.WriteLine("Path contained next position");
-                return currentPoint;
-            }
+
         }
 
     
@@ -382,12 +346,10 @@ namespace PathfindingHW1
             agent.fillMap();
 
 
-            Console.WriteLine(agent.CalculateDistanceFromExit(start, end));
-            //agent.currentPoint.Offset(0, 1);
             Console.WriteLine(agent.SolvePath());
             Console.Read();
 
-        }
+            }
 
     }
 }

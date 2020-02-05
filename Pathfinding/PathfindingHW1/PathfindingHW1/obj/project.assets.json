@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\rafael.santana\\.nuget\\packages\\": {},
+    "C:\\Users\\TEMP.IAM\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+      "projectUniqueName": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
       "projectName": "PathfindingHW1",
-      "projectPath": "C:\\workspace\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
-      "packagesPath": "C:\\Users\\rafael.santana\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\PathfindingHW1\\PathfindingHW1\\obj\\",
+      "projectPath": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+      "packagesPath": "C:\\Users\\TEMP.IAM\\.nuget\\packages\\",
+      "outputPath": "C:\\workspace\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rafael.santana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TEMP.IAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
