@@ -31,3 +31,14 @@ C:\Users\baiom\Documents\GitHub\PathFinding\Pathfinding\PathfindingHW1\Pathfindi
 C:\Users\baiom\Documents\GitHub\PathFinding\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.AssemblyInfo.cs
 C:\Users\baiom\Documents\GitHub\PathFinding\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.dll
 C:\Users\baiom\Documents\GitHub\PathFinding\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.pdb
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.exe
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.deps.json
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.runtimeconfig.json
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.runtimeconfig.dev.json
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.dll
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\bin\Debug\netcoreapp3.1\PathfindingHW1.pdb
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.csprojAssemblyReference.cache
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.AssemblyInfoInputs.cache
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.AssemblyInfo.cs
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.dll
+C:\workspace\PathFinding-master\Pathfinding\PathfindingHW1\PathfindingHW1\obj\Debug\netcoreapp3.1\PathfindingHW1.pdb

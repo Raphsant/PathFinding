@@ -9,14 +9,14 @@ namespace PathfindingHW1
 {
     class Agent
     {
-        public List<Node> path;
+        private List<Node> path;
 
         private Node nextPos;
-        public Node currentPoint;
-        public Node startPoint;
-        public Node endPoint;
+        private Node currentPoint;
+        private Node startPoint;
+        private Node endPoint;
         private Node[,] map;
-        public int mapSize;
+        private int mapSize;
 
         private List<Node> solutionList;
 
@@ -29,15 +29,35 @@ namespace PathfindingHW1
                 fillMap();
                 return;
             }
+
+            input = "0001010011000000000100101000000111101100011110110001101111100101111110000000001000010000000001000000";
+
+            Console.WriteLine(input);
+
+
+
             mapSize = (int)Math.Sqrt(input.Length);
 
+
             map = new Node[mapSize, mapSize];
-            for (int a = 0; a < mapSize; a++)
+            for (int a = 0; a < mapSize - 1; a++)
             {
-                for (int b = 0; b < mapSize; b++)
+                for (int b = 0; b < mapSize - 1; b++)
                 {
                     map[a, b] = new Node(a,b);
-                    map[a, b].isPassable = input.ElementAt(a * mapSize + b); //oh jesus christ
+
+                    Char dumb = input[a * mapSize + b];
+
+                    if(dumb == Convert.ToChar(48))
+                    {
+                        map[a, b].isPassable = 0;
+                    } else
+                    {
+                        map[a, b].isPassable = 1;
+                    }
+
+
+                   //map[a, b].isPassable = input[a * mapSize + b]; //oh jesus christ
                 }
             }
         }
@@ -166,9 +186,9 @@ namespace PathfindingHW1
         void printMap()
         {
 
-            for (int i = 0; i < mapSize; i++)
+            for (int i = 0; i < mapSize - 1; i++)
             {
-                for (int j = 0; j < mapSize; j++)
+                for (int j = 0; j < mapSize - 1; j++)
                 {
                     if(currentPoint.x == i && currentPoint.y == j)
                     {
@@ -176,13 +196,16 @@ namespace PathfindingHW1
                     }
                     else if (map[i, j].isPassable == 0)
                     {
-                        Console.Write(".");
+                        Console.Write(".");                     
+
                     }
+                    
                     else
                     {
                         Console.Write("X");
                     }
-
+                    
+                  
                     if (j == 9)
                         Console.Write("\n");
                 }
@@ -229,9 +252,27 @@ namespace PathfindingHW1
             {
                 path.Add(currentPoint);
             }
-            
-            //Up
-            if (map[currentPoint.x, currentPoint.y + 1].isPassable == 0 )
+
+            if (currentPoint.x + 1 >= mapSize)
+            {
+                return;
+            }
+            if (currentPoint.x - 1 == -1)
+            {
+                return;
+            }
+            if (currentPoint.y + 1 >= mapSize)
+            {
+                return;
+            }
+            if (currentPoint.y - 1 == -1)
+            {
+                return;
+            }
+
+
+            //Right
+            if (map[currentPoint.x, currentPoint.y+1].isPassable == 0 )
             {
                 nextPos = map[currentPoint.x, currentPoint.y + 1];
                 if (!path.Contains(nextPos))
@@ -240,7 +281,7 @@ namespace PathfindingHW1
                 }
             }
 
-            //Right
+            //Down
             else if (map[currentPoint.x + 1, currentPoint.y].isPassable == 0)
             {
                 nextPos = map[currentPoint.x + 1, currentPoint.y];
@@ -250,7 +291,7 @@ namespace PathfindingHW1
                 }               
             }
 
-            //Down
+            //Left
             else if (map[currentPoint.x, currentPoint.y - 1].isPassable == 0) 
             {
                 nextPos = map[currentPoint.x, currentPoint.y - 1];
@@ -260,7 +301,7 @@ namespace PathfindingHW1
                 }                  
             }
 
-            //Left
+            //Up
             else if (map[currentPoint.x - 1, currentPoint.y].isPassable == 0)
             {
                 nextPos = map[currentPoint.x - 1, currentPoint.y];
@@ -269,14 +310,6 @@ namespace PathfindingHW1
                     Move("Up"); 
                 }                      
             }
-            
-
-
-
-
-
-
-
         }
        
         Node Move(string direction)
@@ -347,8 +380,10 @@ namespace PathfindingHW1
 
 
                 agent = new Agent((int)Math.Sqrt(input.Length), new Node(startX,startY), new Node(endX,endY));
-                agent.fillMap(input, true);
+                agent.fillMap(input, false);
             }
+
+            agent.printMap();
 
            
 

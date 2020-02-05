@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {}
+    "C:\\workspace\\PathFinding-master\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {
+    "C:\\workspace\\PathFinding-master\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+        "projectUniqueName": "C:\\workspace\\PathFinding-master\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
         "projectName": "PathfindingHW1",
-        "projectPath": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
-        "packagesPath": "C:\\Users\\baiom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\baiom\\Documents\\GitHub\\PathFinding\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\obj\\",
+        "projectPath": "C:\\workspace\\PathFinding-master\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\PathfindingHW1.csproj",
+        "packagesPath": "C:\\Users\\alex.dimitrijevic\\.nuget\\packages\\",
+        "outputPath": "C:\\workspace\\PathFinding-master\\Pathfinding\\PathfindingHW1\\PathfindingHW1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\baiom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alex.dimitrijevic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
